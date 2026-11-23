@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div id="features-list-div">
+                <div class="div-title">
+                    <span class="eyebrow-label">TRANSPARENT MARKETPLACE FEES</span>
+                    <h2>Simple Pricing for Renters &amp; Owners</h2>
+                    <p>Pay only for the days you rent, or list idle items with zero upfront listing fees.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Renter Standard</h3>
+                        <p class="hero-subtitle" style="margin: 0.5rem 0 1rem;">Free to browse &amp; compare reviews</p>
+                        <p><strong>₹0</strong> account fee · Pay only the owner's daily rental rate plus refundable security hold when required.</p>
+                        <div style="margin-top: 1.25rem;">
+                            <a href="/browse" class="button-primary">Browse Gear</a>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Verified Owner</h3>
+                        <p class="hero-subtitle" style="margin: 0.5rem 0 1rem;">Keep 92% of every completed rental</p>
+                        <p><strong>8%</strong> service fee only on confirmed bookings. Free photo listing, pricing control, and buy-out option.</p>
+                        <div style="margin-top: 1.25rem;">
+                            <a href="/list-item" class="button-primary">List an Item</a>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Try-Before-You-Buy</h3>
+                        <p class="hero-subtitle" style="margin: 0.5rem 0 1rem;">Apply rental fee toward purchase</p>
+                        <p>Love the camera, laptop, or drill you rented? Ask the owner for an outright buy-out and deduct up to 3 days of rent.</p>
+                        <div style="margin-top: 1.25rem;">
+                            <a href="/reviews" class="button-secondary">Read Buyer Reviews</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cta-div">
+                <h2>Ready to Rent or Earn on Rentify?</h2>
+                <p>Create a free community account or explore verified items available in your city today.</p>
+                <a href="/signup" class="button-primary large-button cta-white-button">Get Started Free</a>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

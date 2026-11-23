@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div class="form-container" style="margin: 2.5rem auto;">
+                <h2>Edit Member Profile</h2>
+
+                <div class="owner-profile-row" style="margin: 1rem 0 1.5rem;">
+                    <img src="<%= user.image || '/images/avatar1.png' %>" alt="<%= user.name %>">
+                    <div>
+                        <strong><%= user.name %></strong>
+                        <p class="small-text"><%= user.email %></p>
+                    </div>
+                </div>
+
+                <% if (error) { %>
+                    <div class="form-feedback error" style="display: block; margin-bottom: 1rem;"><%= error %></div>
+                <% } %>
+
+                <form action="/update/<%= user._id %>" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" value="<%= user.name %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button type="submit" class="button-primary">Save Changes</button>
+                        <a href="/read" class="button-secondary">Back to Members</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

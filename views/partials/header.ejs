@@ -1,0 +1,67 @@
+<% const mode = typeof headerMode !== 'undefined' ? headerMode : 'default'; %>
+<% if (mode === 'minimal') { %>
+<header class="site-header minimal-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <img src="/images/Rentify Logo.png" alt="Rentify Official Logo" height="42">
+            <span id="logo-text">Rentify</span>
+        </a>
+        <a href="/browse" class="button-secondary">Back to Marketplace</a>
+    </div>
+</header>
+<% } else { %>
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="logo">
+            <img src="/images/Rentify Logo.png" alt="Rentify Official Logo" height="42">
+            <span id="logo-text">Rentify</span>
+        </a>
+
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="/" class="<%= activePage === 'home' ? 'active-page' : '' %>">Home</a></li>
+                <li><a href="/browse" class="<%= activePage === 'browse' ? 'active-page' : '' %>">Browse</a></li>
+                <li><a href="/features" class="<%= activePage === 'features' ? 'active-page' : '' %>">How It Works</a></li>
+                <li><a href="/pricing" class="<%= activePage === 'pricing' ? 'active-page' : '' %>">Pricing</a></li>
+                <li><a href="/reviews" class="<%= activePage === 'reviews' ? 'active-page' : '' %>">Reviews</a></li>
+                <li><a href="/submit-review" class="<%= activePage === 'submit-review' ? 'active-page' : '' %>">Submit Review</a></li>
+                <li><a href="/list-item" class="<%= activePage === 'list-item' ? 'active-page' : '' %>">List an Item</a></li>
+                <li><a href="/read" class="<%= activePage === 'users' ? 'active-page' : '' %>">Members</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <% if (mode === 'browse') { %>
+                <button type="button" id="toggle-saved-btn" class="header-icon-link" title="Show Saved Wishlist">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span id="nav-wishlist-count">0</span>
+                </button>
+                <a href="/login" title="Account Profile">
+                    <img src="/images/User Profile Avatar.png" alt="User Profile Avatar" class="nav-user-avatar">
+                </a>
+            <% } else if (mode === 'avatar') { %>
+                <a href="/browse?saved=true" class="header-icon-link" title="Saved Items">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span id="nav-wishlist-count">0</span>
+                </a>
+                <a href="/login" title="Account">
+                    <img src="/images/User Profile Avatar.png" alt="User Profile Avatar" class="nav-user-avatar">
+                </a>
+            <% } else if (mode === 'details') { %>
+                <a href="/browse?saved=true" class="header-icon-link" title="Saved Items">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span id="nav-wishlist-count">0</span>
+                </a>
+                <a href="/list-item" class="button-primary">List Your Item</a>
+            <% } else { %>
+                <a href="/browse?saved=true" class="header-icon-link" title="Saved Items">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span id="nav-wishlist-count">0</span>
+                </a>
+                <a href="/login" class="button-secondary">Sign In</a>
+                <a href="/signup" class="button-primary">Sign Up</a>
+            <% } %>
+        </div>
+    </div>
+</header>
+<% } %>

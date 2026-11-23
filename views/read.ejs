@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div class="section-header-row">
+                <div>
+                    <span class="eyebrow-label">COMMUNITY DIRECTORY</span>
+                    <h2>Registered Rentify Members (<%= users.length %>)</h2>
+                </div>
+                <a href="/create" class="button-primary">Add New Member</a>
+            </div>
+
+            <% if (users.length === 0) { %>
+                <div class="form-container" style="text-align: center; margin: 2rem auto;">
+                    <h3>No members found</h3>
+                    <p style="margin: 0.75rem 0 1.25rem;">Create the first Rentify member profile in MongoDB.</p>
+                    <a href="/create" class="button-primary">Create Member</a>
+                </div>
+            <% } else { %>
+                <div class="listings-grid">
+                    <% users.forEach((user) => { %>
+                        <div class="owner-card">
+                            <div class="owner-profile-row">
+                                <img src="<%= user.image || '/images/avatar1.png' %>" alt="<%= user.name %>">
+                                <div>
+                                    <strong><%= user.name %></strong>
+                                    <p class="small-text"><%= user.email %></p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+                                <a href="/edit/<%= user._id %>" class="button-secondary">Edit</a>
+                                <form action="/delete/<%= user._id %>" method="post" style="margin: 0;">
+                                    <button type="submit" class="button-secondary">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

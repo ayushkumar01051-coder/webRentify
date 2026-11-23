@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <!-- 1. Hero Section -->
+            <div id="hero-div">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        <span>The smarter way to access more</span>
+                    </div>
+
+                    <h1>Rent what you need. List what you don't.</h1>
+
+                    <p class="hero-subtitle">
+                        Discover useful items nearby, rent securely from verified owners, read genuine renter reviews before you buy, or turn the things you own into extra income.
+                    </p>
+
+                    <form id="hero-search-form" action="/browse" method="get">
+                        <div class="hero-search-box">
+                            <span class="material-symbols-outlined hero-search-icon">search</span>
+                            <input type="text" id="hero-search-input" name="search" placeholder="What would you like to rent?">
+                            <button type="submit" class="button-primary">Search Items</button>
+                        </div>
+                    </form>
+
+                    <div id="hero-feedback" class="form-feedback"></div>
+
+                    <div class="hero-buttons">
+                        <a href="/browse" class="button-primary">Browse Marketplace</a>
+                        <a href="/list-item" class="button-secondary">List Your Item</a>
+                    </div>
+
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span>1000+ items listed</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span>500+ happy renters</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span>Verified users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="/images/Hero Community Rentals.png" alt="Camera, power drill, camping backpack, and projector available to rent on Rentify">
+                </div>
+            </div>
+
+            <!-- 2. Popular Categories Section -->
+            <div id="categories-div">
+                <div class="section-header-row">
+                    <div>
+                        <span class="eyebrow-label">EXPLORE BY CATEGORY</span>
+                        <h2>Popular Categories</h2>
+                    </div>
+                    <a href="/browse" class="section-action-link">
+                        <span>Browse all categories</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="categories-grid" id="home-categories-grid"></div>
+            </div>
+
+            <!-- 3. Featured Listings Section -->
+            <div id="featured-div">
+                <div class="section-header-row">
+                    <div>
+                        <span class="eyebrow-label">RECOMMENDED NEAR YOU</span>
+                        <h2>Featured Listings</h2>
+                    </div>
+                    <a href="/browse" class="section-action-link">
+                        <span>View all listings</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="listings-grid" id="home-featured-grid"></div>
+            </div>
+
+            <!-- 4. How Rentify Works Section -->
+            <div id="how-it-works-div">
+                <div class="div-title">
+                    <span class="eyebrow-label">SIMPLE &amp; SECURE</span>
+                    <h2>How Rentify works</h2>
+                    <p>Everything you need, without the cost of owning it. Try an item first, read community reviews, and decide with confidence.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-icon-row">
+                            <div class="step-icon-circle">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <span class="step-number-badge">1</span>
+                        </div>
+                        <h3>Browse Items</h3>
+                        <p>Explore thousands of useful items available from trusted people near you.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon-row">
+                            <div class="step-icon-circle">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <span class="step-number-badge">2</span>
+                        </div>
+                        <h3>Book &amp; Pay</h3>
+                        <p>Choose your dates, send a request, and pay securely through Rentify.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon-row">
+                            <div class="step-icon-circle">
+                                <span class="material-symbols-outlined">handshake</span>
+                            </div>
+                            <span class="step-number-badge">3</span>
+                        </div>
+                        <h3>Pick Up &amp; Enjoy</h3>
+                        <p>Meet the owner or arrange delivery, then enjoy the item for your rental period.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-icon-row">
+                            <div class="step-icon-circle">
+                                <span class="material-symbols-outlined">rate_review</span>
+                            </div>
+                            <span class="step-number-badge">4</span>
+                        </div>
+                        <h3>Return &amp; Review</h3>
+                        <p>Return it on time and share a review so future renters can evaluate before buying.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Trusted Community Strip -->
+            <div id="trusted-div">
+                <h2>Trusted by Renters &amp; Creators Across India</h2>
+                <div class="companies-container">
+                    <div class="company-logo">
+                        <img src="/images/google.webp" alt="Google Logo" height="36">
+                        <span>Google</span>
+                    </div>
+                    <div class="company-logo">
+                        <img src="/images/pin.webp" alt="Pinterest Logo" height="36">
+                        <span>Pinterest</span>
+                    </div>
+                    <div class="company-logo">
+                        <img src="/images/micro.webp" alt="Microsoft Logo" height="36">
+                        <span>Microsoft</span>
+                    </div>
+                    <div class="company-logo">
+                        <img src="/images/adobe.webp" alt="Adobe Logo" height="36">
+                        <span>Adobe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Bottom CTA Banner -->
+            <div id="cta-div">
+                <h2>Have Useful Gear Sitting Idle?</h2>
+                <p>List your camera, laptop, tools, or outdoor equipment in minutes or explore real community reviews before you buy.</p>
+                <a href="/list-item" class="button-primary large-button cta-white-button">List an Item Now</a>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/home.js"></script>
+    </body>
+</html>

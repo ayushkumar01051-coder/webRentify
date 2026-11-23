@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'avatar' }) %>
+
+        <div id="page-content">
+            <div class="wizard-layout">
+                <aside class="wizard-sidebar">
+                    <div class="wizard-step-row active-step" data-step="1">
+                        <span class="wizard-step-badge">1</span>
+                        <span>Basic Details</span>
+                    </div>
+                    <div class="wizard-step-row" data-step="2">
+                        <span class="wizard-step-badge">2</span>
+                        <span>Photos</span>
+                    </div>
+                    <div class="wizard-step-row" data-step="3">
+                        <span class="wizard-step-badge">3</span>
+                        <span>Pricing &amp; Availability</span>
+                    </div>
+                    <div class="wizard-step-row" data-step="4">
+                        <span class="wizard-step-badge">4</span>
+                        <span>Review &amp; Publish</span>
+                    </div>
+                </aside>
+
+                <main class="wizard-main-card">
+                    <h1>List Your Item</h1>
+                    <p class="wizard-subtitle">
+                        Tell us about your item. Add clear details to help others rent or buy with confidence.
+                    </p>
+
+                    <div id="listing-feedback" class="form-feedback"></div>
+
+                    <form id="list-item-form">
+                        <div id="wizard-step-1" class="wizard-step-panel">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="item-name">Item Name *</label>
+                                    <input type="text" id="item-name" placeholder="e.g. DSLR Camera">
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-category">Category *</label>
+                                    <select id="item-category">
+                                        <option value="">Select Category</option>
+                                        <option value="Cameras">Cameras</option>
+                                        <option value="Electronics">Electronics</option>
+                                        <option value="Bikes">Bikes</option>
+                                        <option value="Tools">Tools</option>
+                                        <option value="Sports">Sports</option>
+                                        <option value="Furniture">Furniture</option>
+                                        <option value="Fashion">Fashion</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="item-description">Description *</label>
+                                <textarea id="item-description" maxlength="1000" placeholder="Tell people about your item (Condition, features, included accessories, etc.)"></textarea>
+                                <div class="char-counter" id="desc-char-counter">0/1000</div>
+                            </div>
+                        </div>
+
+                        <div id="wizard-step-2" class="wizard-step-panel hidden-panel">
+                            <div class="upload-drop-box">
+                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                                <h3>Upload Photos</h3>
+                                <p class="small-text">Add a clear photo of your item (JPG, PNG - Max. 5MB)</p>
+                                <br>
+                                <input type="file" id="item-file-upload" accept="image/*">
+                                <div class="photo-preview-box">
+                                    <img id="item-photo-preview" src="/images/DSLR Camera.png" alt="Selected Item Preview">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="item-preset-image">Or Select a Sample Product Photo from Gallery</label>
+                                <select id="item-preset-image">
+                                    <option value="/images/DSLR Camera.png">DSLR Camera (Default)</option>
+                                    <option value="/images/Sony Alpha a6400 Main.png">Sony Alpha a6400 Camera</option>
+                                    <option value="/images/Sony Alpha A7 III Camera.png">Sony Alpha A7 III Camera</option>
+                                    <option value="/images/MacBook Air.png">MacBook Air Laptop</option>
+                                    <option value="/images/Mountain Bike.png">Mountain Bike</option>
+                                    <option value="/images/Gaming Console.png">Gaming Console</option>
+                                    <option value="/images/Office Chair.png">Office Chair</option>
+                                    <option value="/images/Tripod.png">Carbon Fiber Tripod</option>
+                                    <option value="/images/Camping Tent.png">Camping Tent</option>
+                                    <option value="/images/Electric Drill.png">Electric Drill</option>
+                                    <option value="/images/Epson 4K Home Projector.png">Epson 4K Home Projector</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="wizard-step-3" class="wizard-step-panel hidden-panel">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="item-rent-price">Daily Rent Price (₹) *</label>
+                                    <input type="number" id="item-rent-price" min="20" max="20000" placeholder="e.g. 500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-buy-price">Optional Buy-Out Price (₹)</label>
+                                    <input type="number" id="item-buy-price" min="0" placeholder="e.g. 25000 (leave 0 if rent only)">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="item-location">City / Pickup Location *</label>
+                                    <input type="text" id="item-location" placeholder="e.g. Gurgaon">
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-condition">Item Condition *</label>
+                                    <select id="item-condition">
+                                        <option value="Like New">Like New</option>
+                                        <option value="Mint">Mint</option>
+                                        <option value="Good">Good</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="owner-name">Owner Name *</label>
+                                    <input type="text" id="owner-name" placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="owner-email">Owner Email *</label>
+                                    <input type="email" id="owner-email" placeholder="you@example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="wizard-step-4" class="wizard-step-panel hidden-panel">
+                            <div class="owner-card" style="margin-bottom: 1.5em;">
+                                <h3>Preview Summary Before Publishing</h3>
+                                <p id="preview-summary-text" style="margin-top: 0.6em; color: rgb(71, 85, 105);">
+                                    Complete the steps to inspect your item summary here.
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="listing-confirm-check"> I confirm the item details are accurate and ready to publish on Rentify.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="wizard-footer-nav">
+                            <button type="button" id="wizard-prev-btn" class="button-secondary hidden-panel">
+                                <span class="material-symbols-outlined">arrow_back</span>
+                                <span>Back</span>
+                            </button>
+
+                            <div style="margin-left: auto; display: flex; gap: 0.8em;">
+                                <button type="button" id="wizard-next-btn" class="button-primary">
+                                    <span>Next</span>
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+
+                                <button type="submit" id="wizard-submit-btn" class="button-primary hidden-panel">
+                                    <span class="material-symbols-outlined">publish</span>
+                                    <span>Publish Item &amp; Save JSON</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </main>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/list-item.js"></script>
+    </body>
+</html>

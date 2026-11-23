@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div id="features-list-div">
+                <div class="div-title">
+                    <span class="eyebrow-label">WHY CHOOSE RENTIFY</span>
+                    <h2>Smart Sharing, Real Reviews, Easy Buying</h2>
+                    <p>Rent useful everyday items nearby, read genuine reviews from verified renters, and buy with total confidence when you are ready.</p>
+                </div>
+
+                <div class="features-grid"></div>
+            </div>
+
+            <div style="background-color: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240);">
+                <div class="div-title">
+                    <span class="eyebrow-label">HOW PEOPLE USE RENTIFY</span>
+                    <h2>From Weekend Projects to Smart Purchases</h2>
+                    <p>Explore how our community rents equipment, tests gear through real reviews, and saves money every day.</p>
+                </div>
+
+                <div class="showcase-grid">
+                    <div class="showcase-card">
+                        <img src="/images/flow.webp" alt="Seamless rental workflow illustration">
+                        <div class="showcase-card-body">
+                            <h3>1. Simple Rental Workflow</h3>
+                            <p>Browse local listings, pick your dates, and coordinate meetup or delivery with verified neighborhood owners.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <img src="/images/gadgets.webp" alt="Cameras, laptops, and electronics gear">
+                        <div class="showcase-card-body">
+                            <h3>2. Try Gadgets Before Buying</h3>
+                            <p>Test a Sony Alpha camera, MacBook Air, or 4K projector for a weekend and check past renter reviews first.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <img src="/images/home.webp" alt="Home furniture and tools setup">
+                        <div class="showcase-card-body">
+                            <h3>3. Tools &amp; Home Essentials</h3>
+                            <p>Borrow cordless drills, office chairs, and DIY equipment whenever you need them without cluttering your home.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <img src="/images/time.webp" alt="Flexible daily rental periods">
+                        <div class="showcase-card-body">
+                            <h3>4. Flexible Daily Rates</h3>
+                            <p>Pay only for the days you actually use an item, with transparent daily pricing and optional buy-out offers.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <img src="/images/travel.webp" alt="Camping and travel gear rental">
+                        <div class="showcase-card-body">
+                            <h3>5. Adventure &amp; Travel Ready</h3>
+                            <p>Rent dome camping tents, tripods, and mountain bikes for weekend getaways at a fraction of retail cost.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <img src="/images/green.webp" alt="Sustainable circular sharing economy">
+                        <div class="showcase-card-body">
+                            <h3>6. Sustainable Community</h3>
+                            <p>Sharing existing cameras, tools, and bikes reduces waste and helps neighbors earn income from idle items.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="testimonials-div">
+                <div class="div-title">
+                    <h2>What Our Community Says</h2>
+                    <p>Real stories from renters, creators, and item owners using Rentify every week.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "Rentify saved my college film project. Reading real renter reviews helped me pick the right DSLR camera, and I ended up buying one after testing it for two days."
+                        </p>
+                        <div class="reviewer-info">
+                            <img src="/images/avatar4.png" alt="Profile picture of Ananya Iyer">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">Ananya Iyer</span>
+                                <span class="reviewer-title">Film &amp; Media Student</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "Listing my extra Bosch drill set and camera tripod on Rentify paid for my entire workshop upgrade. Verified renter ratings give me full peace of mind."
+                        </p>
+                        <div class="reviewer-info">
+                            <img src="/images/avatar5.png" alt="Profile picture of Mr. Rajesh Verma">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">Mr. Rajesh Verma</span>
+                                <span class="reviewer-title">Verified Item Owner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "Whenever I travel or attend hackathons, I rent a MacBook Air or camping tent nearby instead of spending thousands upfront. Fast, transparent, and local."
+                        </p>
+                        <div class="reviewer-info">
+                            <img src="/images/avatar6.png" alt="Profile picture of Aditya Nair">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">Aditya Nair</span>
+                                <span class="reviewer-title">Software Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/features.js"></script>
+    </body>
+</html>

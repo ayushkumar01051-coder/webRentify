@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div class="form-container" style="margin: 2.5rem auto;">
+                <h2>Add Rentify Member</h2>
+                <p class="auth-subtext">Automatically assigns the next community avatar (avatar1.png – avatar6.png).</p>
+
+                <% if (error) { %>
+                    <div class="form-feedback error" style="display: block; margin-bottom: 1rem;"><%= error %></div>
+                <% } %>
+
+                <form action="/create" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="e.g. Ananya Iyer">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="ananya@example.com">
+                    </div>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button type="submit" class="button-primary">Create Member</button>
+                        <a href="/read" class="button-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'details' }) %>
+
+        <div id="page-content">
+            <div class="breadcrumb-bar">
+                <a href="/browse">Browse</a> &rsaquo; <span id="breadcrumb-category">Cameras</span> &rsaquo; <span id="breadcrumb-title">Sony Alpha a6400</span>
+            </div>
+
+            <div class="product-details-layout">
+                <div class="details-left-gallery">
+                    <div class="main-image-box">
+                        <img id="main-product-image" src="/images/Sony Alpha a6400 Main.png" alt="Sony Alpha a6400 Main View">
+                        <button type="button" id="gallery-prev-btn" class="gallery-arrow-btn prev-btn" title="Previous Photo">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button type="button" id="gallery-next-btn" class="gallery-arrow-btn next-btn" title="Next Photo">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                        <button type="button" id="details-favorite-btn" class="favorite-btn" title="Save to Wishlist">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+
+                    <div class="thumbnails-row" id="gallery-thumbnails-row"></div>
+                </div>
+
+                <div class="details-middle-info">
+                    <h1 class="details-title" id="detail-title">Sony Alpha a6400</h1>
+
+                    <div class="details-rating-row">
+                        <span class="card-rating">
+                            <span class="material-symbols-outlined star-gold">star</span>
+                            <strong id="detail-rating">4.8</strong>
+                            <span id="detail-review-count">(120 reviews)</span>
+                        </span>
+                        <span class="badge-verified">
+                            <span class="material-symbols-outlined">check</span>
+                            <span>Verified Owner</span>
+                        </span>
+                    </div>
+
+                    <div class="details-price-line">
+                        <strong id="detail-price">₹1,650</strong> <span>/ day</span>
+                    </div>
+                    <p class="buy-price-subline" id="detail-buy-price">Buy outright option: ₹74,000 (after trying via rent)</p>
+
+                    <div class="status-location-row">
+                        <span class="status-available">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span>Available</span>
+                        </span>
+                        <span class="card-location" style="margin-bottom: 0;">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <span id="detail-location">Gurgaon, Haryana</span>
+                        </span>
+                    </div>
+
+                    <div class="details-cta-stack">
+                        <button type="button" id="open-rent-form-btn" class="button-primary full-width-button">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                            <span>Request to Rent</span>
+                        </button>
+                        <button type="button" id="open-buy-form-btn" class="button-outline-indigo full-width-button">
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                            <span>Buy Now</span>
+                        </button>
+                    </div>
+
+                    <div class="owner-card">
+                        <h3>Owner Details</h3>
+                        <div class="owner-profile-row">
+                            <img id="detail-owner-avatar" src="/images/Owner Rohan Mehta.png" alt="Owner Profile Photo">
+                            <div>
+                                <strong id="detail-owner-name">Rohan Mehta</strong>
+                                <p class="small-text" id="detail-owner-since">Member since March 2024</p>
+                                <span class="card-rating">
+                                    <span class="material-symbols-outlined star-gold">star</span>
+                                    <span id="detail-owner-rating">4.9</span>
+                                    <span id="detail-owner-reviews">(55 reviews)</span>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="button" id="open-message-form-btn" class="button-secondary full-width-button">
+                            <span class="material-symbols-outlined">chat</span>
+                            <span>Message Owner</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-right-geo">
+                    <div class="map-card">
+                        <div class="geo-meta-row">
+                            <div class="geo-meta-item">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <strong id="geo-location-text">Gurgaon, Haryana</strong>
+                            </div>
+                            <div class="geo-meta-item">
+                                <span class="material-symbols-outlined">near_me</span>
+                                <span id="geo-distance-text">2.1 km away</span>
+                            </div>
+                        </div>
+
+                        <img src="/images/Gurgaon Map Preview.png" alt="Pickup Location Map Preview" class="map-preview-img">
+
+                        <div class="spec-boxes-row">
+                            <div class="spec-box">
+                                <div class="spec-icon-circle">
+                                    <span class="material-symbols-outlined">photo_camera</span>
+                                </div>
+                                <span class="spec-box-label">Type</span>
+                                <span class="spec-box-value" id="spec-type-value">DSLR Camera</span>
+                            </div>
+                            <div class="spec-box">
+                                <div class="spec-icon-circle">
+                                    <span class="material-symbols-outlined">verified</span>
+                                </div>
+                                <span class="spec-box-label">Condition</span>
+                                <span class="spec-box-value" id="spec-condition-value">Like New</span>
+                            </div>
+                            <div class="spec-box">
+                                <div class="spec-icon-circle">
+                                    <span class="material-symbols-outlined">local_shipping</span>
+                                </div>
+                                <span class="spec-box-label">Pickup-Delivery</span>
+                                <span class="spec-box-value" id="spec-delivery-value">Meetup / Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="action-form-panel" class="booking-panel hidden-panel">
+                <div class="booking-panel-header">
+                    <h2 id="action-panel-title">Request to Rent Item</h2>
+                    <button type="button" id="close-action-panel-btn" class="button-secondary">Close</button>
+                </div>
+
+                <div id="order-feedback" class="form-feedback"></div>
+
+                <form id="item-action-form">
+                    <input type="hidden" id="action-mode" value="rent">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="order-customer-name">Your Full Name</label>
+                            <input type="text" id="order-customer-name" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="order-customer-email">Your Email Address</label>
+                            <input type="email" id="order-customer-email" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="rent-duration-row">
+                        <div class="form-group">
+                            <label for="order-start-date">Pickup / Start Date</label>
+                            <input type="date" id="order-start-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="order-days">Number of Rental Days</label>
+                            <input type="number" id="order-days" min="1" max="30" value="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="order-handover">Handover Preference</label>
+                            <select id="order-handover">
+                                <option value="Meetup">In-Person Meetup</option>
+                                <option value="Delivery">Doorstep Delivery</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="order-note">Message / Notes for Owner</label>
+                        <textarea id="order-note" placeholder="Mention your planned pickup time or any questions about the item..."></textarea>
+                    </div>
+
+                    <div class="booking-cost-summary" id="booking-cost-summary">
+                        Estimated Total: ₹4,950 (3 days)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="order-agree-terms"> I agree to inspect the item and confirm my booking details.
+                        </label>
+                    </div>
+
+                    <button type="submit" id="order-submit-btn" class="button-primary">
+                        <span class="material-symbols-outlined">save</span>
+                        <span>Submit &amp; Save Booking to JSON File</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="details-tabs-section">
+                <div class="tab-header-row">
+                    <button type="button" class="tab-button active-tab" data-tab="description">Description</button>
+                    <button type="button" class="tab-button" data-tab="specifications">Specifications</button>
+                    <button type="button" class="tab-button" data-tab="reviews">Reviews</button>
+                </div>
+
+                <div id="tab-description" class="tab-panel">
+                    <p id="detail-description-text">
+                        Great condition Sony Alpha a6400 with 16-50mm lens. Perfect for beginners and content creators. Comes with charger, battery and camera bag.
+                    </p>
+                </div>
+
+                <div id="tab-specifications" class="tab-panel hidden-panel">
+                    <table class="spec-table" id="detail-specs-table"></table>
+                </div>
+
+                <div id="tab-reviews" class="tab-panel hidden-panel">
+                    <div class="section-header-row" style="padding-left: 0; padding-right: 0;">
+                        <div>
+                            <h3>Community Reviews for This Item</h3>
+                            <p class="small-text">Read verified renter experiences before renting or buying.</p>
+                        </div>
+                        <a id="write-item-review-link" href="/submit-review" class="button-primary">
+                            <span class="material-symbols-outlined">rate_review</span>
+                            <span>Write a Review</span>
+                        </a>
+                    </div>
+
+                    <div class="reviews-grid" id="product-reviews-grid" style="padding: 1em 0;"></div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/product-details.js"></script>
+    </body>
+</html>

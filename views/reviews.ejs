@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div id="reviews-showcase-div">
+                <div class="div-title">
+                    <span class="eyebrow-label">COMMUNITY FEEDBACK</span>
+                    <h2>Browse Rental &amp; Buyer Reviews</h2>
+                    <p>Read real feedback from people who rented or bought cameras, bikes, laptops, and tools before making your decision.</p>
+                </div>
+
+                <div class="filter-bar">
+                    <form id="reviews-filter-form" style="display: flex; flex-wrap: wrap; gap: 0.8em; justify-content: center; width: 100%;">
+                        <input type="text" id="review-search-input" placeholder="Search by item or reviewer (e.g., Sony, Camera, Bike)..." class="search-input">
+
+                        <select id="review-category-select" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="Cameras">Cameras</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Bikes">Bikes</option>
+                            <option value="Tools">Tools</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Others">Others</option>
+                        </select>
+
+                        <select id="review-rating-select" class="filter-select">
+                            <option value="0">Any Rating</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars &amp; up</option>
+                            <option value="3">3 Stars &amp; up</option>
+                        </select>
+
+                        <button type="submit" class="button-primary">Search</button>
+
+                        <button type="button" id="export-reviews-json-btn" class="button-secondary">
+                            <span class="material-symbols-outlined">download</span>
+                            <span>Export Reviews JSON</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="reviews-grid"></div>
+            </div>
+
+            <div id="cta-div">
+                <h2>Rented or Bought an Item on Rentify?</h2>
+                <p>Share your honest experience to help others decide whether to rent or buy the same gear.</p>
+                <a href="/submit-review" class="button-primary large-button cta-white-button">Submit Your Review</a>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/reviews.js"></script>
+    </body>
+</html>

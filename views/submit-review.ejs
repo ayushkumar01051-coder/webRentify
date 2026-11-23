@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'default' }) %>
+
+        <div id="page-content">
+            <div id="review-form-div">
+                <div class="div-title">
+                    <span class="eyebrow-label">SHARE YOUR EXPERIENCE</span>
+                    <h2>Submit an Item Review</h2>
+                    <p>Your review helps future Rentify users decide whether to rent or buy an item. Submitted reviews are saved locally and exported as a JSON file.</p>
+                </div>
+
+                <div class="form-container">
+                    <div id="review-feedback" class="form-feedback"></div>
+
+                    <form id="submit-review-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reviewer-name">Your Name *</label>
+                                <input type="text" id="reviewer-name" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewer-email">Your Email *</label>
+                                <input type="email" id="reviewer-email" placeholder="you@example.com">
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reviewed-item-name">Item Rented or Bought *</label>
+                                <select id="reviewed-item-name">
+                                    <option value="">Select an Item</option>
+                                    <option value="Sony Alpha a6400">Sony Alpha a6400</option>
+                                    <option value="DSLR Camera">DSLR Camera</option>
+                                    <option value="Sony Alpha A7 III Camera">Sony Alpha A7 III Camera</option>
+                                    <option value="Mountain Bike">Mountain Bike</option>
+                                    <option value="MacBook Air">MacBook Air</option>
+                                    <option value="Gaming Console">Gaming Console</option>
+                                    <option value="Office Chair">Office Chair</option>
+                                    <option value="Tripod">Tripod</option>
+                                    <option value="Tennis Racket">Tennis Racket</option>
+                                    <option value="Camping Tent">Camping Tent</option>
+                                    <option value="Electric Drill">Electric Drill</option>
+                                    <option value="Bosch Professional Drill Set">Bosch Professional Drill Set</option>
+                                    <option value="Epson 4K Home Projector">Epson 4K Home Projector</option>
+                                    <option value="Two-Person Camping Bundle">Two-Person Camping Bundle</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewed-category">Category *</label>
+                                <select id="reviewed-category">
+                                    <option value="">Select Category</option>
+                                    <option value="Cameras">Cameras</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Bikes">Bikes</option>
+                                    <option value="Tools">Tools</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Furniture">Furniture</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="usage-date">Date Rented / Used *</label>
+                                <input type="date" id="usage-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="transaction-type">Experience Type *</label>
+                                <select id="transaction-type">
+                                    <option value="Rented">Rented</option>
+                                    <option value="Rented then Bought">Rented then Bought</option>
+                                    <option value="Bought">Bought</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-group">
+                            <label>Overall Rating *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="rating" value="1"> 1 Star</label>
+                                <label><input type="radio" name="rating" value="2"> 2 Stars</label>
+                                <label><input type="radio" name="rating" value="3"> 3 Stars</label>
+                                <label><input type="radio" name="rating" value="4"> 4 Stars</label>
+                                <label><input type="radio" name="rating" value="5"> 5 Stars</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="review-details">Detailed Review *</label>
+                            <textarea id="review-details" maxlength="600" placeholder="Share how the item performed, condition at pickup, owner communication, and whether you recommend renting or buying it..."></textarea>
+                            <div class="char-counter" id="review-char-counter">0/600</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="recommend-check" checked> I would recommend renting or buying this item to others.
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="button-primary full-width-button">
+                                <span class="material-symbols-outlined">save</span>
+                                <span>Submit Review &amp; Save to JSON File</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="post-submit-actions" class="hidden-panel" style="display: none; gap: 1em; flex-wrap: wrap;">
+                        <button type="button" id="download-last-review-btn" class="button-secondary">
+                            <span class="material-symbols-outlined">download</span>
+                            <span>Download Review JSON Again</span>
+                        </button>
+                        <a href="/reviews" class="button-primary">
+                            <span>View All Reviews</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/submit-review.js"></script>
+    </body>
+</html>

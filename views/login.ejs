@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body class="login-page-body">
+        <%- include('partials/header', { headerMode: 'minimal' }) %>
+
+        <div id="page-content" class="login-main">
+            <div id="login-form-div">
+                <div class="form-container login-container">
+                    <h2>Welcome Back</h2>
+                    <p class="auth-subtext">Sign in to rent gear, manage listings, or post reviews.</p>
+
+                    <div class="social-login-options">
+                        <a href="#" class="social-button" id="google-login-demo">
+                            <span class="material-symbols-outlined social-icon">mail</span>
+                            <span>Continue with Google</span>
+                        </a>
+                        <a href="#" class="social-button" id="microsoft-login-demo">
+                            <span class="material-symbols-outlined social-icon">window</span>
+                            <span>Continue with Microsoft</span>
+                        </a>
+                    </div>
+
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div id="auth-feedback" class="form-feedback"></div>
+
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="Enter your password">
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label small-text">
+                                <input type="checkbox" id="remember-me"> Remember me
+                            </label>
+                            <a href="#" class="forgot-password-link small-text">Forgot Password?</a>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="button-primary full-width-button">Sign In</button>
+                        </div>
+                    </form>
+
+                    <div class="demo-box">
+                        <strong>Quick Demo Account (For Testing):</strong><br>
+                        Email: <code>demo@rentify.app</code> | Password: <code>rentify123</code><br><br>
+                        <button type="button" id="fill-demo-login-btn" class="button-secondary small-text">Fill Demo Credentials</button>
+                    </div>
+                </div>
+
+                <p class="form-footer-text">
+                    Don't have an account? <a href="/signup">Sign Up</a>
+                </p>
+            </div>
+        </div>
+
+        <script src="/js/auth.js"></script>
+    </body>
+</html>

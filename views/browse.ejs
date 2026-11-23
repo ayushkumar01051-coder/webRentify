@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <%- include('partials/header', { headerMode: 'browse' }) %>
+
+        <div id="page-content">
+            <div class="browse-search-section">
+                <form id="browse-search-form" class="browse-search-bar">
+                    <span class="material-symbols-outlined hero-search-icon">search</span>
+                    <input type="text" id="browse-search-input" placeholder="Search for items (e.g., DSLR Camera, Mountain Bike, MacBook)...">
+                    <button type="submit" class="button-primary">Search</button>
+                </form>
+            </div>
+
+            <div class="browse-content-row">
+                <aside class="filters-sidebar">
+                    <div class="sidebar-header">
+                        <h3>Filters</h3>
+                        <button type="button" id="clear-filters-btn" class="clear-filters-btn">Clear all</button>
+                    </div>
+
+                    <div class="filter-section">
+                        <span class="filter-section-label">Category</span>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Bikes"> Bikes</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Electronics"> Electronics</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Cameras"> Cameras</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Furniture"> Furniture</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Fashion"> Fashion</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Sports"> Sports</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Tools"> Tools</label>
+                        <label class="filter-option-row"><input type="checkbox" class="category-checkbox" value="Others"> Others</label>
+                    </div>
+
+                    <div class="filter-section">
+                        <span class="filter-section-label">Max Daily Price: <strong id="price-value-label">₹2000</strong></span>
+                        <input type="range" id="price-range-slider" class="price-range-slider" min="0" max="2000" step="50" value="2000">
+                        <div class="slider-labels">
+                            <span>₹0</span>
+                            <span>₹2000</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <span class="filter-section-label">Location</span>
+                        <select id="location-select" class="sidebar-select">
+                            <option value="">Any Location</option>
+                            <option value="Gurgaon">Gurgaon</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="New Delhi">New Delhi</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-section">
+                        <span class="filter-section-label">Rental Type</span>
+                        <label class="filter-option-row"><input type="radio" name="rentalType" value="" checked> All Listings</label>
+                        <label class="filter-option-row"><input type="radio" name="rentalType" value="Rent"> Rent</label>
+                        <label class="filter-option-row"><input type="radio" name="rentalType" value="Buy"> Buy Option Available</label>
+                    </div>
+
+                    <div class="filter-section">
+                        <span class="filter-section-label">Minimum Rating</span>
+                        <label class="filter-option-row">
+                            <input type="radio" name="minRating" value="0" checked> Any Rating
+                        </label>
+                        <label class="filter-option-row">
+                            <input type="radio" name="minRating" value="4">
+                            <span class="material-symbols-outlined star-gold">star</span> 4 &amp; above
+                        </label>
+                        <label class="filter-option-row">
+                            <input type="radio" name="minRating" value="3">
+                            <span class="material-symbols-outlined star-gold">star</span> 3 &amp; above
+                        </label>
+                        <label class="filter-option-row">
+                            <input type="radio" name="minRating" value="2">
+                            <span class="material-symbols-outlined star-gold">star</span> 2 &amp; above
+                        </label>
+                    </div>
+                </aside>
+
+                <main class="browse-main-feed">
+                    <div class="feed-header-row">
+                        <div>
+                            <h2 id="browse-results-heading">Browse Available Gear</h2>
+                            <p id="browse-results-count">Loading items...</p>
+                        </div>
+
+                        <div class="feed-controls">
+                            <label for="sort-select"><strong>Sort by:</strong></label>
+                            <select id="sort-select" class="sort-select">
+                                <option value="popular">Popular</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+
+                            <button type="button" id="export-catalog-json" class="button-secondary">
+                                <span class="material-symbols-outlined">download</span>
+                                <span>Export Catalog JSON</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="browse-feedback" class="form-feedback"></div>
+                    <div class="browse-grid" id="browse-product-grid"></div>
+                </main>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+        <script src="/js/browse.js"></script>
+    </body>
+</html>
